@@ -167,7 +167,12 @@ Begin {
             "Microsoft.ZuneVideo",
             "MicrosoftTeams",
 			"Microsoft.Office.OneNote",
-			"Microsoft.OutlookForWindows"
+			"Microsoft.OutlookForWindows",
+			"Microsoft.Xbox.TCUI",
+			"Microsoft.XboxGameCallableUI",
+			"Microsoft.MicrosoftOfficeHub","Microsoft.PowerAutomateDesktop",
+			"MicrosoftCorporationII.QuickAssist"
+
         ))
  
     #Define Icons
