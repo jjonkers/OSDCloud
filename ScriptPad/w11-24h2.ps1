@@ -66,7 +66,9 @@ $OOBEDeployJson = @'
                     "Microsoft.XboxSpeechToTextOverlay",
                     "Microsoft.YourPhone",
                     "Microsoft.ZuneMusic",
-                    "Microsoft.ZuneVideo"
+                    "Microsoft.ZuneVideo", 
+					"Microsoft.Office.OneNote",
+					"Microsoft.OutlookForWindows"
                    ],
     "UpdateDrivers":  {
                           "IsPresent":  true
