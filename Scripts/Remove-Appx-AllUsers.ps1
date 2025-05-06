@@ -166,7 +166,7 @@ Begin {
             "Microsoft.ZuneMusic",
             "Microsoft.ZuneVideo",
             "MicrosoftTeams",
-			"Microsoft.Office.OneNote", 
+			"Microsoft.Office.OneNote",
 			"Microsoft.OutlookForWindows"
         ))
  
