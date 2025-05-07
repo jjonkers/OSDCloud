@@ -132,6 +132,10 @@ Write-Host -ForegroundColor Green "Downloading and creating script for OOBE phas
 #Invoke-RestMethod https://start-autopilotoobe.osdcloud.ch | Out-File -FilePath 'C:\Windows\Setup\scripts\autopilotoobe.ps1' -Encoding ascii -Force
 Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/Remove-Appx-AllUsers.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\AppxRemoval.ps1' -Encoding ascii -Force
 
+Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-hp-image-assistent.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\install-hp-image-assistent.ps1' -Encoding ascii -Force
+
+
+
 $OOBECMD = @'
 @echo off
 # Execute OOBE Tasks
@@ -139,6 +143,7 @@ $OOBECMD = @'
 #start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\productkey.ps1
 #start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\autopilotprereq.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\AppxRemoval.ps1
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-hp-image-assistent.ps1
 
 # Below a PS session for debug and testing in system context, # when not needed 
 # start /wait powershell.exe -NoL -ExecutionPolicy Bypass
