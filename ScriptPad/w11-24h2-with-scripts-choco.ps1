@@ -138,6 +138,8 @@ Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads
 
 Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/LayoutModification.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\LayoutModification.ps1 ' -Encoding ascii -Force
 
+Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/DisableCloudOptimizedContent.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\DisableCloudOptimizedContent.ps1 ' -Encoding ascii -Force
+
 
 $OOBECMD = @'
 @echo off
@@ -149,6 +151,7 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-hp-image-assistent.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-action1.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\LayoutModification.ps1 
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\DisableCloudOptimizedContent.ps1 
 
 
 # Below a PS session for debug and testing in system context, # when not needed 
