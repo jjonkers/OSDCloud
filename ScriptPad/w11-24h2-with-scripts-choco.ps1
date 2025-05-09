@@ -140,6 +140,14 @@ Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads
 
 Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/DisableCloudOptimizedContent.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\DisableCloudOptimizedContent.ps1 ' -Encoding ascii -Force
 
+#Choco
+
+Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\install-chocolatly.ps1' -Encoding ascii -Force
+
+Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\install-chocolatly-packages.ps1' -Encoding ascii -Force
+
+
+
 
 $OOBECMD = @'
 @echo off
@@ -158,9 +166,13 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\DisableCloudOptimizedContent.ps1 
 
-Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly.ps1
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly.ps1
 
-Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly-packages.ps1
+
+#Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly.ps1
+
+#Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1
 
 
 
