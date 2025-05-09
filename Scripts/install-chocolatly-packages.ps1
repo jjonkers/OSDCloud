@@ -1,5 +1,5 @@
 #install apps, include fullpath to chocolatey 
-c:\programdata\chocolatey\choco.exe install adobereader googlechrome firefox 7zip.install notepadplusplus.install remote-desktop-client clickshare-desktop greenshot vlc -y
+c:\programdata\chocolatey\choco.exe install adobereader googlechrome firefox 7zip.install notepadplusplus.install remote-desktop-client clickshare-desktop vlc -y
 
 #download xml
 invoke-webrequest https://raw.githubusercontent.com/jjonkers/OSDcloud/refs/heads/main/Scripts/Office365_x64_Online.xml -outfile  c:\temp\Office365_x64_Online.xml
