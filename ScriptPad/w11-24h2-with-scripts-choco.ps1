@@ -147,11 +147,22 @@ $OOBECMD = @'
 #start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\keyboard.ps1
 #start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\productkey.ps1
 #start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\autopilotprereq.ps1
+
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\AppxRemoval.ps1
+
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-hp-image-assistent.ps1
+
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-action1.ps1
+
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\LayoutModification.ps1 
+
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\DisableCloudOptimizedContent.ps1 
+
+Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly.ps1
+
+Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1
+
+
 
 
 # Below a PS session for debug and testing in system context, # when not needed 
