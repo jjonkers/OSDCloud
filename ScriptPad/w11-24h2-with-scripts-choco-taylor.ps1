@@ -37,7 +37,7 @@ $OOBEDeployJson = @'
                       "IsPresent":  true
                   },
     "Autopilot":  {
-                      "IsPresent":  false
+                      "IsPresent":  true
                   },
     "RemoveAppx":  [
                     "MicrosoftTeams",
@@ -90,32 +90,32 @@ $OOBEDeployJson | Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.OOBEDeplo
 #$Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
 #$TargetComputername = $Serial.Substring(4,3)
 
-#$AssignedComputerName = "AkosCloud-$TargetComputername"
-#Write-Host -ForegroundColor Red $AssignedComputerName
-#Write-Host ""
+$AssignedComputerName = $env:computername
+Write-Host -ForegroundColor Red $AssignedComputerName
+Write-Host ""
 
-#Write-Host -ForegroundColor Green "Create C:\ProgramData\OSDeploy\OSDeploy.AutopilotOOBE.json"
-#$AutopilotOOBEJson = @"
-#{
-#    "AssignedComputerName" : "$AssignedComputerName",
-#    "AddToGroup":  "AADGroupX",#
-#    "Assign":  {
-#                   "IsPresent":  true
-#               },
-#    "GroupTag":  "GroupTagXXX",
-#    "Hidden":  [
-#                   "AddToGroup",
-#                   "AssignedUser",
-#                   "PostAction",
-#                   "GroupTag",
-#                   "Assign"
-#               ],
-#    "PostAction":  "Quit",
-#    "Run":  "NetworkingWireless",
-#    "Docs":  "https://google.com/",
-#    "Title":  "Autopilot Manual Register"
-#}
-#"@
+Write-Host -ForegroundColor Green "Create C:\ProgramData\OSDeploy\OSDeploy.AutopilotOOBE.json"
+$AutopilotOOBEJson = @"
+{
+    "AssignedComputerName" : "$AssignedComputerName",
+    "AddToGroup":  "DEVICES_AUTOPILOT_TEST_CLSG",
+    "Assign":  {
+                   "IsPresent":  true
+               },
+    "GroupTag":  "GroupTagXXX",
+    "Hidden":  [
+                   "AddToGroup",
+                   "AssignedUser",
+                   "PostAction",
+                   "GroupTag",
+                   "Assign"
+               ],
+    "PostAction":  "Quit",
+    "Run":  "NetworkingWireless",
+    "Docs":  "https://google.com/",
+    "Title":  "Autopilot Manual Register"
+}
+"@
 
 #If (!(Test-Path "C:\ProgramData\OSDeploy")) {
 #    New-Item "C:\ProgramData\OSDeploy" -ItemType Directory -Force | Out-Null
