@@ -122,6 +122,9 @@ If (!(Test-Path "C:\ProgramData\OSDeploy")) {
 }
 $AutopilotOOBEJson | Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.AutopilotOOBE.json" -Encoding ascii -Force
 
+# Below a PS session for debug and testing in system context, # when not needed 
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass
+
 #================================================
 #  [PostOS] OOBE CMD Command Line
 #================================================
