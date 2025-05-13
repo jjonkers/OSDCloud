@@ -117,10 +117,10 @@ $AutopilotOOBEJson = @"
 }
 "@
 
-#If (!(Test-Path "C:\ProgramData\OSDeploy")) {
-#    New-Item "C:\ProgramData\OSDeploy" -ItemType Directory -Force | Out-Null
-#}
-#$AutopilotOOBEJson | Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.AutopilotOOBE.json" -Encoding ascii -Force
+If (!(Test-Path "C:\ProgramData\OSDeploy")) {
+    New-Item "C:\ProgramData\OSDeploy" -ItemType Directory -Force | Out-Null
+}
+$AutopilotOOBEJson | Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.AutopilotOOBE.json" -Encoding ascii -Force
 
 #================================================
 #  [PostOS] OOBE CMD Command Line
@@ -162,7 +162,7 @@ $OOBECMD = @'
 
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\AppxRemoval.ps1
 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-hp-image-assistent.ps1
+#start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-hp-image-assistent.ps1
 
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-action1.ps1
 
@@ -170,11 +170,11 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\DisableCloudOptimizedContent.ps1 
 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly.ps1
+#start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly.ps1
 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly-packages.ps1
+#start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly-packages.ps1
 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly-packages.ps1\install-Knowbe4.ps1
+#start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\install-chocolatly-packages.ps1\install-Knowbe4.ps1
 
 #Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly.ps1
 
