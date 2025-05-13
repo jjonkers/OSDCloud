@@ -86,11 +86,11 @@ $OOBEDeployJson | Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.OOBEDeplo
 #================================================
 #  [PostOS] AutopilotOOBE Configuration Staging
 #================================================
-#Write-Host -ForegroundColor Green "Define Computername:"
-#$Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
-#$TargetComputername = $Serial.Substring(4,3)
+Write-Host -ForegroundColor Green "Define Computername:"
+$Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
+$TargetComputername = $Serial.Substring(4,3)
 
-$AssignedComputerName = $env:computername
+$AssignedComputerName = $TargetComputername 
 Write-Host -ForegroundColor Red $AssignedComputerName
 Write-Host ""
 
