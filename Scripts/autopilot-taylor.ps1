@@ -117,6 +117,9 @@ if ($WindowsPhase -eq 'OOBE') {
 			Assign = $true
 			AddTogroup = 'DEVICES_AUTOPILOT_TEST_CLSG'
 			AddTogroupOptions = 'DEVICES_AUTOPILOT_TEST_CLSG','TEST'
+			AssignedComputerName = 'DEVICE-011-XXXX'
+			AssignedcomputerNameOptions = 'DEVICE-011-XXXX','DEVICE-191-XXXX'
+			AssignedUser = "jonkers@jmdejonggroep.nl"
 }
 				autopilotoobe @Params 
     }
