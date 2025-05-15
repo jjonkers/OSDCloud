@@ -97,7 +97,7 @@ if ($WindowsPhase -eq 'OOBE') {
 	#Scripts to install 
 	Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/Remove-Appx-AllUsers.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\AppxRemoval.ps1' -Encoding ascii -Force
 	
-	start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\AppxRemoval.ps1
+	C:\Windows\setup\scripts\AppxRemoval.ps1
 
     #Get Autopilot information from the device
     $TestAutopilotProfile = osdcloud-TestAutopilotProfile
