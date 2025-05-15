@@ -105,14 +105,17 @@ if ($WindowsPhase -eq 'OOBE') {
     elseif ($TestAutopilotProfile -eq $false) {
         #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
         #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
-		autopilotoobe
+		install-module autopilotoobe
+		import-module autopilotoobe
+		autopilotoobe 
     }
     #Or maybe we just can't figure it out
     else {
         Write-Warning 'Unable to determine if device is Autopilot registered'
     }
     osdcloud-RemoveAppx -Basic
-    #osdcloud-Rsat -Basic
+    #osdcloud-Rsat -Basiccd\
+	
     #osdcloud-NetFX
     #osdcloud-UpdateDrivers
     #osdcloud-UpdateWindows
