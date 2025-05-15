@@ -106,8 +106,19 @@ if ($WindowsPhase -eq 'OOBE') {
         #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
         #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
 		install-module autopilotoobe
+		
 		import-module autopilotoobe
-		autopilotoobe 
+		
+		$Params = @{
+			Title = 'De Jong Duke Autopilot Registration'
+			GroupTag = 'AutoPilotTest'
+			GroupTagOptions = 'AutoPilotTest','DJDUS','DJDNL'
+			#Hidden = 'AddToGroup','AssignedComputerName','AssignedUser'
+			Assign = $true
+			AddTogroup = 'DEVICES_AUTOPILOT_TEST_CLSG'
+			AddTogroupOptions = 'DEVICES_AUTOPILOT_TEST_CLSG','TEST'
+}
+				autopilotoobe 
     }
     #Or maybe we just can't figure it out
     else {
@@ -116,7 +127,7 @@ if ($WindowsPhase -eq 'OOBE') {
     osdcloud-RemoveAppx -Basic
     #osdcloud-Rsat -Basiccd\
 	
-    #osdcloud-NetFX
+    osdcloud-NetFX
     #osdcloud-UpdateDrivers
     #osdcloud-UpdateWindows
     #osdcloud-UpdateDefender
