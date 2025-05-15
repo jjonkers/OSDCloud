@@ -118,7 +118,7 @@ if ($WindowsPhase -eq 'OOBE') {
 			AddTogroup = 'DEVICES_AUTOPILOT_TEST_CLSG'
 			AddTogroupOptions = 'DEVICES_AUTOPILOT_TEST_CLSG','TEST'
 }
-				autopilotoobe 
+				autopilotoobe @Params 
     }
     #Or maybe we just can't figure it out
     else {
