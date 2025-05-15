@@ -146,7 +146,7 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 
 #Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1
 
-start /wait Powershell iex (irm https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/autopilot-taylor.ps1) 
+start /wait Powershell -NoL -C iex (irm https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/autopilot-taylor.ps1) 
 
 
 
@@ -163,6 +163,6 @@ $OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding asci
 #=======================================================================
 #   Restart-Computer
 #=======================================================================
-#Write-Host  -ForegroundColor Green "Restarting in 20 seconds!"
-#Start-Sleep -Seconds 20
-#wpeutil reboot
+Write-Host  -ForegroundColor Green "Restarting in 20 seconds!"
+Start-Sleep -Seconds 20
+wpeutil reboot
