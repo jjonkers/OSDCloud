@@ -93,6 +93,11 @@ if ($WindowsPhase -eq 'OOBE') {
 
     #Load everything needed to run AutoPilot and Azure KeyVault
     osdcloud-StartOOBE -Display -Language -DateTime -Autopilot -KeyVault
+	
+	#Scripts to install 
+	Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/Remove-Appx-AllUsers.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\AppxRemoval.ps1' -Encoding ascii -Force
+	
+	start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scripts\AppxRemoval.ps1
 
     #Get Autopilot information from the device
     $TestAutopilotProfile = osdcloud-TestAutopilotProfile
@@ -130,7 +135,7 @@ if ($WindowsPhase -eq 'OOBE') {
     osdcloud-RemoveAppx -Basic
     #osdcloud-Rsat -Basiccd\
 	
-    osdcloud-NetFX
+    #osdcloud-NetFX
     #osdcloud-UpdateDrivers
     #osdcloud-UpdateWindows
     #osdcloud-UpdateDefender
@@ -143,6 +148,9 @@ if ($WindowsPhase -eq 'OOBE') {
     }
     $null = Stop-Transcript -ErrorAction Ignore
     #osdcloud-RestartComputer
+	
+	
+	
 }
 #endregion
 #=================================================
