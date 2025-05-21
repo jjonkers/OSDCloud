@@ -148,14 +148,6 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 
 #start /wait Powershell -NoL -C iex (irm https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/autopilot-taylor.ps1) 
 
-
-
-# Below a PS session for debug and testing in system context, # when not needed 
-
-
-
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass 
-
 exit 
 '@
 $OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding ascii -Force
