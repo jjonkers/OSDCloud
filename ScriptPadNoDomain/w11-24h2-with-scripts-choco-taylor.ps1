@@ -143,7 +143,7 @@ Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads
 
 Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/DisableCloudOptimizedContent.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\DisableCloudOptimizedContent.ps1 ' -Encoding ascii -Force
 
-Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-Knowbe4.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\install-Knowbe4.ps1' -Encoding ascii -Force
+#Invoke-RestMethod https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-Knowbe4.ps1 | Out-file -FilePath 'c:\windows\setup\scripts\install-Knowbe4.ps1' -Encoding ascii -Force
 
 
 
@@ -187,7 +187,7 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 
 
 # Below a PS session for debug and testing in system context, # when not needed 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass
+#start /wait powershell.exe -NoL -ExecutionPolicy Bypass
 
 exit 
 '@
@@ -196,6 +196,6 @@ $OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding asci
 #=======================================================================
 #   Restart-Computer
 #=======================================================================
-#Write-Host  -ForegroundColor Green "Restarting in 20 seconds!"
-#Start-Sleep -Seconds 20
-#wpeutil reboot
+Write-Host  -ForegroundColor Green "Restarting in 20 seconds!"
+Start-Sleep -Seconds 20
+wpeutil reboot
