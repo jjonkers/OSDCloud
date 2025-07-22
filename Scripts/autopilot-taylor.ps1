@@ -146,7 +146,7 @@ if ($WindowsPhase -eq 'OOBE') {
         }
     }
     $null = Stop-Transcript -ErrorAction Ignore
-    #osdcloud-RestartComputer
+    osdcloud-RestartComputer
 	
 	
 	
