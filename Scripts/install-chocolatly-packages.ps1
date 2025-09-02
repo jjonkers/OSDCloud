@@ -10,4 +10,4 @@ c:\programdata\chocolatey\choco.exe install office365business --params "/configp
 #remove desktop icons 
 remove-item c:\users\public\desktop\*.lnk
 
-Install-Language nl-NL
+#Install-Language nl-NL
