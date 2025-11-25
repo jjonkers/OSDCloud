@@ -147,7 +147,7 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\setup\scri
 #Start /Wait PowerShell -NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/install-chocolatly-packages.ps1
 
 #start /wait Powershell -NoL -C iex (irm https://raw.githubusercontent.com/jjonkers/OSDCloud/refs/heads/main/Scripts/autopilot-taylor.ps1) 
-start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F c:\windows\system32\setup-autopilot.ps1
+
 exit 
 '@
 $OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding ascii -Force
@@ -158,6 +158,7 @@ $OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding asci
 Write-Host -ForegroundColor Green "Create C:\Windows\Setup\Scripts\SetupComplete.cmd"
 $SetupCompleteCMD = @'
 
+start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F c:\windows\system32\setup-autopilot.ps1
 
 '@
 $SetupCompleteCMD | Out-File -FilePath 'C:\Windows\Setup\Scripts\SetupComplete.cmd' -Encoding ascii -Force
